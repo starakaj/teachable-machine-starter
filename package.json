@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack",
+    "images": "node scripts/imageDownloader.js",
     "start": "webpack && node server.js",
     "watch": "NODE_ENV=development node server.js"
   },

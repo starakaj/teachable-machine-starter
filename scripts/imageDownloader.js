@@ -8,11 +8,12 @@ const mkdirp = require("mkdirp");
 const { program } = require("commander");
 
 program
-  .option('-r, --randomize', 'Randomize the order of downloaded images')
-  .option('--count <count>', 'number of images to download', 100)
-  .option('-o, --output <outDir>', 'Directory to write to', ".")
-  .option("--wnid <word-net-id>", "Source Word Net ID. Leave blank for random images")
-  .parse(process.argv);
+    .option("-d, --dry", "Dry run--print what would happen but don't do it")
+    .option('-r, --randomize', 'Randomize the order of downloaded images')
+    .option('--count <count>', 'number of images to download', 100)
+    .option('-o, --output <outDir>', 'Directory to write to', process.cwd())
+    .option("--wnid <word-net-id>", "Source Word Net ID. Leave blank for random images")
+    .parse(process.argv);
 
 const stopAt = program.count;
 const randomize = program.randomize;
@@ -28,6 +29,8 @@ if (!!wnid) {
 } else {
     console.log(`Downloading up to ${stopAt} Image Net images at random to ${destPath}`);
 }
+
+if (program.dry) process.exit(0);
 
 // Try to make the output directory
 mkdirp.sync(destPath);
