@@ -9,8 +9,12 @@
     "watch": "NODE_ENV=development node server.js"
   },
   "dependencies": {
+    "commander": "^5.0.0",
     "express": "^4.16.4",
     "jsx-loader": "^0.13.2",
+    "mkdirp": "^1.0.4",
+    "node-fetch": "^2.6.0",
+    "osmosis": "^1.1.10",
     "p5": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
