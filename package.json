@@ -14,7 +14,7 @@
     "express": "^4.16.4",
     "jsx-loader": "^0.13.2",
     "mkdirp": "^1.0.4",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "osmosis": "^1.1.10",
     "p5": "^1.0.0",
     "react": "^16.8.6",
